@@ -1,29 +1,27 @@
-let chai = require('chai');
-let fib = require('../utils/fib');
-let expect = chai.expect;
+ const fib = (target, col = [0, 1]) => {
+    if (typeof target !== "number") {
+        throw new Error("Argument typeof(target) needs to be a number");
+    }
 
-describe("fib tests", () => {
-    it("should throw an error for parameter other than integer", () => {
-        expect(() => fib("1")).to.throw("Argument typeof(target) needs to be a number");
-    });
+    if (target === 0) {
+        throw new Error("Target count cannot be 0");
+    }
 
-    it("should return an array", () => {
-        expect(Array.isArray(fib(5))).to.be.true;
-    });
+    if (target === 1) {
+        return [0];
+    }
 
-    it("should throw an error when patameter is 0", () => {
-        expect(() => fib(0)).to.throw("Target count cannot be 0");
-    });
+    if (col.length === target) {
+        return col;
+    }
 
-    it("should return `[0]` when parameter is 1", () => {
-        expect(fib(1)).to.eql([0]);
-    });
+    let collectionLength = col.length;
+    let n1 = col[collectionLength - 2];
+    let n2 = col[collectionLength - 1];
+    let addition = n1 + n2;
+    let newCollection = [...col, addition];
 
-    it("should return an array with integers in it", () => {
-        fib(4).map(item => expect(typeof item === "number").to.be.true);
-    });
+    return fib(target, newCollection);
+};
 
-    it("should return `[0, 1, 1, 2]` with parameter being 4", () => {
-        expect(fib(4)).to.eql([0, 1, 1, 2]);
-    });
-});
+ module.exports = fib;
