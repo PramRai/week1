@@ -1,0 +1,15 @@
+
+Expires →Tue, 12 Feb 2019 05:19:57 GMT //Headers contains data/date after the response is considered stale.
+Date →Tue, 12 Feb 2019 05:19:57 GMT// Contains the date/time when the message was originated
+Cache-Control →private, max-age=0, must-revalidate, no-transform //Specify directives for cache mechanisms for request and response
+ETag →"IUREzboS_XZycecz4xfru1ipYfo/so573xToMpjIvmn2UO5tKk-Vvy0" //The ETag response header is an identifier for  a specfic version of resource.
+Vary →Origin // Header determines to match up future request headers
+Vary →X-Origin // determine an X location to origin
+Content-Type →application/json; charset=UTF-8 //Used to indicate the media type for resource
+Content-Encoding →gzip //Used to compress the media-type 
+X-Content-Type-Options →nosniff //Used by the server to indicate that  the MIME…MIME types advertised in the Content-Typeheaders should not be changed and be followed
+X-Frame-Options →SAMEORIGIN //Use to indicate  whether or not a browser should be allowed…allowed to render a page in a frame, iframe, embed or object .
+X-XSS-Protection →1; mode=block
+Server →GSE
+Alt-Svc →quic=":443"; ma=2592000; v="44,43,39" //The Alt-Svc header is used to list alternate ways to reach this website.
+Transfer-Encoding →chunked
